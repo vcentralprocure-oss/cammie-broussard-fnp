@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlimited Primary Care Membership - Cammie Broussard, FNP-C</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .provider-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #667eea;
+            margin: 0 auto 20px;
+            display: block;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: #2c5f8d;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .provider-name {
+            font-size: 1.1rem;
+            color: #888;
+        }
+        
+        .value-statement {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .value-statement p {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        .value-statement strong {
+            color: #667eea;
+        }
+        
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+        
+        .pricing-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            text-align: center;
+            border: 3px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .pricing-card:hover {
+            border-color: #667eea;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 35px rgba(102, 126, 234, 0.2);
+        }
+        
+        .pricing-card.featured {
+            border-color: #667eea;
+            position: relative;
+        }
+        
+        .badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #667eea;
+            color: white;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            color: #2c5f8d;
+            margin-bottom: 20px;
+        }
+        
+        .price {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #667eea;
+            margin: 20px 0;
+        }
+        
+        .price small {
+            font-size: 1.2rem;
+            color: #666;
+        }
+        
+        .pricing-card ul {
+            list-style: none;
+            text-align: left;
+            margin: 30px 0;
+        }
+        
+        .pricing-card ul li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1rem;
+        }
+        
+        .pricing-card ul li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+        
+        .btn-secondary:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        .comparison {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            margin-bottom: 40px;
+        }
+        
+        .comparison h2 {
+            font-size: 2rem;
+            color: #2c5f8d;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .comparison-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #666;
+        }
+        
+        .comparison-col.win h3 {
+            color: #667eea;
+        }
+        
+        .comparison-col ul {
+            list-style: none;
+        }
+        
+        .comparison-col ul li {
+            padding: 10px 0;
+            font-size: 1.05rem;
+        }
+        
+        .comparison-col.lose ul li {
+            color: #999;
+            text-decoration: line-through;
+        }
+        
+        .cta-final {
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 40px;
+            border-radius: 20px;
+        }
+        
+        .cta-final h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-final p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .pricing-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCVgYgqnPGgfKA9JOTurUvqoYB9bL4C8t3VA&s" 
+                 alt="Cammie Broussard, FNP-C" 
+                 class="provider-photo">
+            <h1>Unlimited Primary Care<br>for One Monthly Fee</h1>
+            <p class="subtitle">No co-pays. No insurance hassles. No surprises.</p>
+            <p class="provider-name">Cammie Broussard, FNP-C | Lafayette & Crowley, LA</p>
+        </div>
+        
+        <div class="value-statement">
+            <p>
+                Imagine having a <strong>family nurse practitioner you can actually reach</strong>—
+                same-day video visits, unlimited messaging, house calls available, and 
+                <strong>one simple monthly price</strong>. No insurance billing. No waiting weeks. 
+                Just great primary care.
+            </p>
+        </div>
+        
+        <div class="pricing-cards">
+            <!-- Individual -->
+            <div class="pricing-card">
+                <h3>Individual</h3>
+                <div class="price">$95<small>/mo</small></div>
+                <ul>
+                    <li>Unlimited telehealth visits</li>
+                    <li>24-48 hour message response</li>
+                    <li>Annual wellness exam</li>
+                    <li>Chronic disease management</li>
+                    <li>Prescription management</li>
+                    <li>Lab orders & interpretation</li>
+                    <li>Discounted house calls</li>
+                </ul>
+                <a href="index.html" class="btn">Join Now</a>
+            </div>
+
+            <!-- Couple (Featured) -->
+            <div class="pricing-card featured">
+                <span class="badge">Most Popular</span>
+                <h3>Couple</h3>
+                <div class="price">$160<small>/mo</small></div>
+                <ul>
+                    <li>Everything in Individual</li>
+                    <li>For 2 people</li>
+                    <li>Shared family account</li>
+                    <li>Priority scheduling</li>
+                    <li>Coordinated care</li>
+                    <li>Save $30/month</li>
+                </ul>
+                <a href="index.html" class="btn">Join Now</a>
+            </div>
+
+            <!-- Family -->
+            <div class="pricing-card">
+                <h3>Family</h3>
+                <div class="price">$250<small>/mo</small></div>
+                <ul>
+                    <li>Everything in Individual</li>
+                    <li>For up to 4 people</li>
+                    <li>All ages welcome</li>
+                    <li>Family wellness planning</li>
+                    <li>Coordinated care for all</li>
+                    <li>Save $130/month</li>
+                </ul>
+                <a href="index.html" class="btn">Join Now</a>
+            </div>
+        </div>
+        
+        <div class="comparison">
+            <h2>Traditional Insurance vs. Membership</h2>
+            <div class="comparison-grid">
+                <div class="comparison-col lose">
+                    <h3>❌ Traditional Insurance</h3>
+                    <ul>
+                        <li>Wait 2-4 weeks for appointments</li>
+                        <li>7-minute rushed visits</li>
+                        <li>Co-pays every visit ($30-$75)</li>
+                        <li>Phone trees and hold times</li>
+                        <li>Provider changes constantly</li>
+                        <li>Insurance denials and hassles</li>
+                    </ul>
+                </div>
+                
+                <div class="comparison-col win">
+                    <h3>✅ Our Membership</h3>
+                    <ul>
+                        <li>Same-day or next-day visits</li>
+                        <li>30-45 minute appointments</li>
+                        <li>No co-pays, one monthly fee</li>
+                        <li>Text or message directly</li>
+                        <li>Same provider every time</li>
+                        <li>No insurance billing at all</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cta-final">
+            <h2>Ready to Join?</h2>
+            <p>Book a free 15-minute consult to see if membership is right for you.</p>
+            <a href="index.html" class="btn" style="background: white; color: #667eea;">Get Started Today</a>
+            <p style="margin-top: 25px; font-size: 1rem;">
+                Or call/text: <strong>(XXX) XXX-XXXX</strong><br>
+                Email: <strong>cammie@example.com</strong>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

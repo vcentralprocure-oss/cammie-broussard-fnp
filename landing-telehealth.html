@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Same-Day Telehealth Visits - Cammie Broussard, FNP-C</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 650px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 2.3rem;
+            color: #2c5f8d;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .provider-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .provider-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #667eea;
+            margin-right: 20px;
+        }
+        
+        .provider-details h2 {
+            font-size: 1.3rem;
+            color: #2c5f8d;
+            margin-bottom: 5px;
+        }
+        
+        .provider-details p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        .value-prop {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 35px;
+            line-height: 1.7;
+        }
+        
+        .value-prop strong {
+            color: #667eea;
+        }
+        
+        .features {
+            margin: 35px 0;
+        }
+        
+        .feature {
+            display: flex;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .feature-content h3 {
+            font-size: 1.15rem;
+            color: #2c5f8d;
+            margin-bottom: 5px;
+        }
+        
+        .feature-content p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        .price-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 35px 0;
+        }
+        
+        .price-box h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+        
+        .price {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .price small {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .price-box p {
+            font-size: 1.05rem;
+            opacity: 0.95;
+            margin-top: 10px;
+        }
+        
+        .cta {
+            text-align: center;
+            margin-top: 35px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #2c5f8d;
+            color: white;
+            padding: 18px 50px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(44, 95, 141, 0.4);
+        }
+        
+        .btn:hover {
+            background: #1e4465;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(44, 95, 141, 0.5);
+        }
+        
+        .secondary-cta {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1rem;
+        }
+        
+        .secondary-cta a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .secondary-cta a:hover {
+            text-decoration: underline;
+        }
+        
+        .trust-badge {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 1px solid #e0e0e0;
+            color: #888;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 35px 25px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .provider-info {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .provider-photo {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .price {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span class="badge">✨ Same-Day Availability</span>
+        
+        <h1>See a Nurse Practitioner by Video Today</h1>
+        
+        <div class="provider-info">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCVgYgqnPGgfKA9JOTurUvqoYB9bL4C8t3VA&s" 
+                 alt="Cammie Broussard, FNP-C" 
+                 class="provider-photo">
+            <div class="provider-details">
+                <h2>Cammie Broussard, FNP-C</h2>
+                <p>Board-Certified Family Nurse Practitioner</p>
+                <p>Serving Lafayette & Crowley, Louisiana</p>
+            </div>
+        </div>
+        
+        <p class="value-prop">
+            No waiting weeks for an appointment. No rushing through a 7-minute visit. 
+            Get <strong>same-day or next-day</strong> primary care by secure video visit. 
+            I diagnose, prescribe, and manage your health—all from the comfort of home.
+        </p>
+        
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <div class="feature-content">
+                    <h3>Fast Access</h3>
+                    <p>Most appointments within 24 hours. Many same-day slots available.</p>
+                </div>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">💊</div>
+                <div class="feature-content">
+                    <h3>Full Primary Care</h3>
+                    <p>Sinus infections, UTIs, chronic disease management, prescription refills, and more.</p>
+                </div>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">💳</div>
+                <div class="feature-content">
+                    <h3>Simple Pricing</h3>
+                    <p>No insurance billing. No surprise bills. Pay one clear price per visit.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="price-box">
+            <h3>Telehealth Visit</h3>
+            <div class="price">$75<small>/visit</small></div>
+            <p>Or get unlimited visits with a $95/month membership</p>
+        </div>
+        
+        <div class="cta">
+            <a href="index.html" class="btn">Book Your Visit Now</a>
+        </div>
+        
+        <div class="secondary-cta">
+            <p><a href="index.html">Learn more about memberships and house calls →</a></p>
+        </div>
+        
+        <div class="trust-badge">
+            <p>✓ HIPAA-compliant secure video</p>
+            <p>✓ Licensed in Louisiana (NPI: 1548799331)</p>
+            <p>✓ Prescriptions sent electronically to your pharmacy</p>
+        </div>
+    </div>
+</body>
+</html>
