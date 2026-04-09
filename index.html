@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cammie Broussard, FNP-C - Primary Care That Works for You</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c5f8d;
+        }
+        
+        nav a {
+            margin-left: 30px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        nav a:hover {
+            color: #2c5f8d;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .provider-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            margin: 0 auto 30px;
+            display: block;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero .lead {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: #fff;
+            color: #667eea;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .btn-secondary {
+            background: #2c5f8d;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: #1e4465;
+        }
+        
+        /* Sections */
+        section {
+            padding: 60px 20px;
+        }
+        
+        section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: #2c5f8d;
+            text-align: center;
+        }
+        
+        section h3 {
+            font-size: 1.6rem;
+            margin: 30px 0 15px;
+            color: #444;
+        }
+        
+        .about {
+            background: white;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 40px;
+            align-items: start;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .about-photo {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        /* How It Works */
+        .how-it-works {
+            background: #f8f9fa;
+        }
+        
+        .methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .method-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .method-card h3 {
+            color: #667eea;
+            margin-top: 0;
+        }
+        
+        .method-card ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .method-card ul li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .method-card ul li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .cta-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        /* Pricing */
+        .pricing {
+            background: white;
+        }
+        
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .pricing-card {
+            background: #f8f9fa;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            border: 3px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .pricing-card:hover {
+            border-color: #667eea;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .pricing-card h3 {
+            margin-top: 0;
+            color: #667eea;
+        }
+        
+        .price {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #2c5f8d;
+            margin: 20px 0;
+        }
+        
+        .price small {
+            font-size: 1.2rem;
+            color: #666;
+        }
+        
+        .pricing-card ul {
+            list-style: none;
+            margin: 30px 0;
+            text-align: left;
+        }
+        
+        .pricing-card ul li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .pricing-card ul li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        /* Who This Is For */
+        .who-for {
+            background: #f8f9fa;
+        }
+        
+        .who-for ul {
+            max-width: 800px;
+            margin: 30px auto;
+            list-style: none;
+        }
+        
+        .who-for ul li {
+            padding: 15px 0;
+            padding-left: 40px;
+            position: relative;
+            font-size: 1.15rem;
+        }
+        
+        .who-for ul li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        /* Benefits */
+        .benefits {
+            background: white;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .benefit-item {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .benefit-item h3 {
+            font-size: 1.3rem;
+            margin: 15px 0;
+        }
+        
+        /* FAQ */
+        .faq {
+            background: #f8f9fa;
+        }
+        
+        .faq-list {
+            max-width: 900px;
+            margin: 40px auto;
+        }
+        
+        .faq-item {
+            background: white;
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+        }
+        
+        .faq-item h3 {
+            color: #667eea;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        
+        .faq-item p {
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+        
+        /* Get Started */
+        .get-started {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .get-started h2 {
+            color: white;
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .step {
+            background: rgba(255,255,255,0.1);
+            padding: 30px 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .step-number {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .step p {
+            font-size: 1.1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: #2c5f8d;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        footer p {
+            margin: 10px 0;
+        }
+        
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero .lead {
+                font-size: 1.1rem;
+            }
+            
+            .provider-photo {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            nav {
+                display: none;
+            }
+            
+            .methods,
+            .pricing-cards,
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">Cammie Broussard, FNP-C</div>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCVgYgqnPGgfKA9JOTurUvqoYB9bL4C8t3VA&s" 
+                 alt="Cammie Broussard, FNP-C" 
+                 class="provider-photo">
+            
+            <h1>Primary Care That Actually Works for You</h1>
+            
+            <p class="lead">
+                I'm <strong>Cammie Broussard, FNP-C</strong>, a Family Nurse Practitioner serving Lafayette and Crowley, Louisiana. 
+                I offer telehealth-first primary care with mobile house calls—because you deserve a provider who has time for you, 
+                knows your health history, and doesn't make you wait three weeks for an appointment.
+            </p>
+            
+            <a href="#contact" class="btn btn-primary">Book a Free 15-Minute Consult</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>Who I Am</h2>
+            <div class="about-content">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCVgYgqnPGgfKA9JOTurUvqoYB9bL4C8t3VA&s" 
+                     alt="Cammie Broussard, FNP-C" 
+                     class="about-photo">
+                <div class="about-text">
+                    <p>
+                        I'm a board-certified Family Nurse Practitioner (FNP-C, NPI 1548799331) with experience in 
+                        family practice and wellness/aesthetics. I've worked in traditional clinics, urgent care, and 
+                        wellness settings—and I've seen how rushed, impersonal care fails patients.
+                    </p>
+                    <p>
+                        So I built a practice that does it differently: <strong>telehealth for quick access</strong>, 
+                        <strong>house calls for personal care</strong>, and <strong>optional memberships for unlimited 
+                        primary care</strong>. No insurance billing. No 7-minute appointments. Just good medicine.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+            <p style="text-align: center; font-size: 1.15rem; max-width: 800px; margin: 0 auto 40px;">
+                Getting care is simple. You choose what fits your life:
+            </p>
+            
+            <div class="methods">
+                <!-- Telehealth -->
+                <div class="method-card">
+                    <h3>📱 Telehealth Visits</h3>
+                    <p>Secure video visits for acute issues, medication refills, lab reviews, and follow-ups. Same-day or next-day availability.</p>
+                    <ul>
+                        <li><strong>When:</strong> Usually within 24 hours (often same-day)</li>
+                        <li><strong>Best for:</strong> Sinus infections, UTIs, rashes, chronic disease check-ins</li>
+                        <li><strong>Cost:</strong> $75 per visit or unlimited with membership</li>
+                    </ul>
+                    <div class="cta-button">
+                        <a href="#contact" class="btn btn-secondary">Schedule a Telehealth Visit</a>
+                    </div>
+                </div>
+
+                <!-- House Calls -->
+                <div class="method-card">
+                    <h3>🏡 Mobile House Calls</h3>
+                    <p>In-home visits for situations where face-to-face care matters: elderly patients, mobility issues, or just convenience.</p>
+                    <ul>
+                        <li><strong>When:</strong> Scheduled in advance (1-3 days out)</li>
+                        <li><strong>Best for:</strong> Wellness exams, chronic disease management, seniors</li>
+                        <li><strong>Cost:</strong> $150 per visit (members get discounts)</li>
+                    </ul>
+                    <div class="cta-button">
+                        <a href="#contact" class="btn btn-secondary">Request a House Call</a>
+                    </div>
+                </div>
+
+                <!-- Membership -->
+                <div class="method-card">
+                    <h3>💎 Membership Options</h3>
+                    <p>Unlimited telehealth visits, priority scheduling, annual wellness exams, and discounted house calls—one monthly fee.</p>
+                    <ul>
+                        <li><strong>Individual:</strong> $95/month</li>
+                        <li><strong>Couple:</strong> $160/month</li>
+                        <li><strong>Family (up to 4):</strong> $250/month</li>
+                    </ul>
+                    <div class="cta-button">
+                        <a href="#pricing" class="btn btn-secondary">View Membership Benefits</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who This Is For -->
+    <section class="who-for">
+        <div class="container">
+            <h2>Who This Is For</h2>
+            <p style="text-align: center; font-size: 1.15rem; max-width: 800px; margin: 0 auto 30px;">
+                This practice is built for:
+            </p>
+            <ul>
+                <li><strong>Busy professionals</strong> who need same-day care without taking half a day off work</li>
+                <li><strong>Families</strong> who want consistent, accessible primary care without insurance headaches</li>
+                <li><strong>Seniors</strong> who prefer or require in-home visits</li>
+                <li><strong>Wellness-focused patients</strong> who value preventive care and real relationships</li>
+                <li><strong>Anyone tired of rushed, impersonal clinic visits</strong></li>
+            </ul>
+            <p style="text-align: center; font-size: 1.2rem; margin-top: 40px; font-weight: 600;">
+                If you want a provider who knows your name, remembers your health history, and actually has time to listen—this is for you.
+            </p>
+        </div>
+    </section>
+
+    <!-- Pricing/Benefits -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2>Membership Benefits</h2>
+            
+            <div class="pricing-cards">
+                <!-- Individual -->
+                <div class="pricing-card">
+                    <h3>Individual</h3>
+                    <div class="price">$95<small>/month</small></div>
+                    <ul>
+                        <li>Unlimited telehealth visits</li>
+                        <li>24-48 hour message response</li>
+                        <li>Annual wellness exam</li>
+                        <li>Chronic disease management</li>
+                        <li>Prescription management</li>
+                        <li>Discounted house calls</li>
+                        <li>No co-pays or claims</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-secondary">Join Now</a>
+                </div>
+
+                <!-- Couple -->
+                <div class="pricing-card">
+                    <h3>Couple</h3>
+                    <div class="price">$160<small>/month</small></div>
+                    <ul>
+                        <li>Everything in Individual</li>
+                        <li>For 2 people</li>
+                        <li>Shared family account</li>
+                        <li>Priority scheduling</li>
+                        <li>Coordinated care</li>
+                        <li>Save $30/month vs 2 individual</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-secondary">Join Now</a>
+                </div>
+
+                <!-- Family -->
+                <div class="pricing-card">
+                    <h3>Family</h3>
+                    <div class="price">$250<small>/month</small></div>
+                    <ul>
+                        <li>Everything in Individual</li>
+                        <li>For up to 4 people</li>
+                        <li>All ages welcome</li>
+                        <li>Family wellness planning</li>
+                        <li>Coordinated care for all</li>
+                        <li>Save $130/month vs 4 individual</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-secondary">Join Now</a>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <h3>Or Pay Per Visit</h3>
+                <p style="font-size: 1.15rem; margin: 20px 0;">
+                    <strong>Telehealth:</strong> $75 per visit &nbsp; | &nbsp; <strong>House Call:</strong> $150 per visit
+                </p>
+                <p style="color: #666;">No membership required. Same quality care, pay as you go.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Grid -->
+    <section class="benefits">
+        <div class="container">
+            <h2>What You Get</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Same-Day Access</h3>
+                    <p>Most telehealth visits scheduled within 24 hours. No more waiting weeks for care.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">💊</div>
+                    <h3>Prescription Management</h3>
+                    <p>Refills, new prescriptions, and medication reviews—sent electronically to your pharmacy.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">📋</div>
+                    <h3>Lab Orders & Interpretation</h3>
+                    <p>I order labs and imaging when needed, then explain your results in plain English.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">🏠</div>
+                    <h3>House Calls Available</h3>
+                    <p>In-home visits for comprehensive care, ideal for seniors or anyone who prefers it.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">❤️</div>
+                    <h3>Chronic Disease Care</h3>
+                    <p>Diabetes, hypertension, thyroid issues—ongoing management and support.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">📞</div>
+                    <h3>Direct Access</h3>
+                    <p>Text or message me directly. No phone trees, no waiting on hold.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2>Common Questions</h2>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3>Is telehealth safe and effective?</h3>
+                    <p>Yes. For most primary care needs—acute illnesses, chronic disease management, medication refills, and wellness visits—telehealth is as effective as in-person care. Studies back this up. If I determine you need hands-on assessment, labs, or imaging, I'll tell you—and I offer house calls for those situations.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Do you take insurance?</h3>
+                    <p>No. I don't bill insurance, which means no co-pays, no claims, and no surprise bills. You pay me directly. You can still use your insurance for labs, imaging, specialists, and prescriptions—I'll give you orders and referrals just like any primary care provider.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What if I need labs or imaging?</h3>
+                    <p>I can order labs, X-rays, ultrasounds, and any other tests you need. You'll use your insurance (or pay cash) at a local lab or imaging center. I'll review your results, explain what they mean, and create a treatment plan with you.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Can you prescribe medications?</h3>
+                    <p>Yes. As a Family Nurse Practitioner, I can prescribe medications, including controlled substances (with appropriate evaluation). I send prescriptions electronically to your preferred pharmacy.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How do house calls work?</h3>
+                    <p>You schedule a house call in advance (typically 1-3 days out). I bring everything I need for a comprehensive visit: stethoscope, blood pressure cuff, basic point-of-care testing supplies. Visits last 30-45 minutes. Members receive discounted rates.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What's your cancellation policy?</h3>
+                    <p>Please give 24 hours' notice if you need to cancel or reschedule. Life happens—I'm flexible—but last-minute cancellations may incur a fee for house calls.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Started -->
+    <section class="get-started" id="contact">
+        <div class="container">
+            <h2>How to Get Started</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 40px;">It's simple:</p>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <p><strong>Book a free 15-minute phone consult</strong> to see if this model is right for you.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <p><strong>Choose your option:</strong> Membership, pay-per-visit, or house call.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <p><strong>Schedule your first visit</strong>—telehealth or in-home.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <p><strong>Get the care you deserve.</strong></p>
+                </div>
+            </div>
+
+            <h2 style="margin-top: 50px;">Ready to Join?</h2>
+            <p style="font-size: 1.2rem; margin: 20px 0 40px;">
+                You deserve primary care that works for your life—not the other way around.
+            </p>
+            
+            <a href="tel:+1234567890" class="btn btn-primary" style="margin-right: 20px;">📞 Call to Book</a>
+            <a href="mailto:cammie@example.com" class="btn btn-primary">✉️ Email Me</a>
+            
+            <p style="margin-top: 40px; font-size: 1.1rem;">
+                <strong>Questions?</strong> Text or call: <a href="tel:+1234567890" style="color: white; text-decoration: underline;">(XXX) XXX-XXXX</a><br>
+                Email: <a href="mailto:cammie@example.com" style="color: white; text-decoration: underline;">cammie@example.com</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p><strong>Cammie Broussard, FNP-C</strong></p>
+            <p>NPI: 1548799331</p>
+            <p>Serving Lafayette & Crowley, Louisiana</p>
+            <p style="margin-top: 20px;">
+                <a href="#about">About</a> &nbsp;|&nbsp; 
+                <a href="#how-it-works">How It Works</a> &nbsp;|&nbsp; 
+                <a href="#pricing">Pricing</a> &nbsp;|&nbsp; 
+                <a href="#faq">FAQ</a> &nbsp;|&nbsp; 
+                <a href="#contact">Contact</a>
+            </p>
+            <p style="margin-top: 20px; font-size: 0.9rem; color: rgba(255,255,255,0.7);">
+                © 2026 Cammie Broussard, FNP-C. All rights reserved.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
